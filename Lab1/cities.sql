@@ -83,7 +83,7 @@ SELECT name
 FROM cities
 ORDER BY population DESC, region ASC;
 
-SELECT region
+SELECT DISTINCT region
 FROM cities;
 
 SELECT name
