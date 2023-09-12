@@ -84,8 +84,9 @@ WHERE region IN ('S','C','N') AND population > 50000;
 
 SELECT name
 FROM cities
-WHERE region IN ('E','W','N') AND population > 150000 AND population < 350000
-ORDER BY name ASC;
+WHERE region IN ('E','W','N') AND population BETWEEN 50000 AND 350000
+ORDER BY name ASC
+LIMIT 20;
 
 SELECT name
 FROM cities
