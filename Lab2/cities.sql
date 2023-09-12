@@ -71,7 +71,7 @@ INSERT INTO `cities` (`id`, `name`, `population`, `region`) VALUES
 
 SELECT name
 FROM cities
-WHERE population > 1000000;
+WHERE population >= 1000000;
 
 SELECT name
 FROM cities
