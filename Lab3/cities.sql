@@ -87,10 +87,10 @@ FROM cities
 ORDER BY population DESC
 LIMIT 10;
 
-SELECT name, (population / 40000000 * 100) AS population_percentage
+SELECT CONCAT(name, '-' , population / 40000000 * 100, '%')
 FROM cities
 WHERE (population / 40000000 * 100) >= 0.1
-ORDER BY population_percentage DESC
+ORDER BY population / 40000000 * 100 DESC;
 
 
 -- 2023-19-09 04:28:23
