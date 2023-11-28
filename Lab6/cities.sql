@@ -8,18 +8,16 @@ FROM cities
 JOIN regions ON cities.region = regions.uuid
 WHERE regions.name = 'Nord';
 
-CREATE TABLE Lines
+CREATE TABLE lines
 (
-    line_id SERIAL PRIMARY KEY,
+    id SERIAL PRIMARY KEY,
     name VARCHAR(255),
     color VARCHAR(255),
-    start_station_id INTEGER REFERENCES Stations(station_id),
-    end_station_id INTEGER REFERENCES Stations(station_id),
 );
 
-CREATE TABLE Stations
+CREATE TABLE stations
 (
-    station_id SERIAL PRIMARY KEY,
+    id SERIAL PRIMARY KEY,
     name VARCHAR(255),
     city VARCHAR(255) NOT NULL,
     latitude DOUBLE PRECISION,
@@ -29,9 +27,9 @@ CREATE TABLE Stations
     line_id INTEGER REFERENCES Lines(line_id),
 );
 
-CREATE TABLE Connections
+CREATE TABLE connections
 (
-    connection_id SERIAL PRIMARY KEY,
+    id SERIAL PRIMARY KEY,
     station_a INTEGER REFERENCES Stations(station_id),
     station_b INTEGER REFERENCES Stations(station_id),
     distance DOUBLE PRECISION,
