@@ -24,6 +24,8 @@ CREATE TABLE Stations
     city VARCHAR(255) NOT NULL,
     latitude DOUBLE PRECISION,
     longitude DOUBLE PRECISION,
+    prev_station_id INTEGER INTEGER REFERENCES Stations(station_id),
+    next_station_id INTEGER INTEGER REFERENCES Stations(station_id),
     line_id INTEGER REFERENCES Lines(line_id),
 );
 
