@@ -13,6 +13,8 @@ CREATE TABLE Lines
     line_id SERIAL PRIMARY KEY,
     name VARCHAR(255),
     color VARCHAR(255),
+    start_station_id INTEGER REFERENCES Stations(station_id),
+    end_station_id INTEGER REFERENCES Stations(station_id),
 );
 
 CREATE TABLE Stations
